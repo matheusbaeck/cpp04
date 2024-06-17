@@ -6,12 +6,12 @@
 #    By: math <math@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 18:22:45 by math42            #+#    #+#              #
-#    Updated: 2024/06/12 13:56:04 by math             ###   ########.fr        #
+#    Updated: 2024/06/17 12:24:46 by math             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Folders and Names
-NAME		= ex
+# Folders and types
+type		= ex
 SRCSDIR		= .
 INCLUDES	= .
 
@@ -21,21 +21,21 @@ SRCS		= main.cpp Animal.cpp Cat.cpp Dog.cpp
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+all: $(type)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(type): $(SRCSDIR)/$(SRCS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
 	rm -rf *.o
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(type)
 
 re: fclean all
 
-test: $(NAME)
-	./$(NAME)
+test: $(type)
+	./$(type)
 
 .PHONY: all clean fclean re test
 

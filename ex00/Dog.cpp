@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 13:55:07 by math              #+#    #+#             */
-/*   Updated: 2024/06/12 13:55:56 by math             ###   ########.fr       */
+/*   Created: 2024/06/12 13:30:43 by math              #+#    #+#             */
+/*   Updated: 2024/06/17 12:59:37 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 Dog::Dog( void )
 {
+	this->_type = "Dog";
 	std::cout << "cpy contructor Dog" << std::endl;
 }
 
-Dog::Dog( std::string name)
+Dog::Dog( std::string type)
 {
-	this->setName(name);
-	std::cout << "constructor Dog" << std::endl;
+	this->_type = type;
+	std::cout << "constructor Dog "<< type << std::endl;
 }
 
 Dog	&Dog::operator=( Dog const &obj )
 {
-	this->setName(obj.getName());
+	this->_type = obj._type;
 	return (*this);
 }
 
@@ -34,13 +35,7 @@ Dog::~Dog( void )
 	std::cout << "destructor Dog" << std:: endl;
 }
 
-void	Dog::makeSound( void )
+void	Dog::makeSound( void ) const
 {
-	std::cout << "Au!!!" << std:: endl;
-}
-
-std::ostream	&operator<<(std::ostream &os, Dog const &obj )
-{
-	os << "Dog:" + obj.getName();
-	return (os);
+	std::cout << "Woof!!!" << std:: endl;
 }

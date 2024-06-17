@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:30:43 by math              #+#    #+#             */
-/*   Updated: 2024/06/12 13:51:51 by math             ###   ########.fr       */
+/*   Updated: 2024/06/17 12:58:25 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 Cat::Cat( void )
 {
+	this->_type = "Cat";
 	std::cout << "cpy contructor Cat" << std::endl;
 }
 
-Cat::Cat( std::string name)
+Cat::Cat( std::string type)
 {
-	this->setName(name);
-	std::cout << "constructor Cat" << std::endl;
+	this->_type = type;
+	std::cout << "constructor Cat "<< type << std::endl;
 }
 
 Cat	&Cat::operator=( Cat const &obj )
 {
-	this->setName(obj.getName());
+	this->_type = obj._type;
 	return (*this);
 }
 
@@ -34,13 +35,7 @@ Cat::~Cat( void )
 	std::cout << "destructor Cat" << std:: endl;
 }
 
-void	Cat::makeSound( void )
+void	Cat::makeSound( void ) const
 {
 	std::cout << "Miau!!!" << std:: endl;
-}
-
-std::ostream	&operator<<(std::ostream &os, Cat const &obj )
-{
-	os << "Cat:" + obj.getName();
-	return (os);
 }

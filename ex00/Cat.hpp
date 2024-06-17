@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:35:40 by math              #+#    #+#             */
-/*   Updated: 2024/06/12 13:53:46 by math             ###   ########.fr       */
+/*   Updated: 2024/06/17 12:58:39 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ class Cat : public Animal
 {
 	public:
 		Cat( void );
-		Cat( std::string name );
+		Cat( std::string type );
 		Cat	&operator=( Cat const &obj );
 		~Cat( void );
-		void	makeSound( void );
-		/*	EXTRA	*/
-		friend std::ostream	&operator<<( std::ostream &os, Cat const &obj );
+		void		makeSound( void ) const;
 };
 
 #endif

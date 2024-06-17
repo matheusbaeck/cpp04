@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:59:11 by math              #+#    #+#             */
-/*   Updated: 2024/06/12 13:59:24 by math             ###   ########.fr       */
+/*   Updated: 2024/06/17 14:23:23 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 
 int	main( void )
 {
-	Animal human;
-	Cat	cat;
-	Dog	dog;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	human = Animal("Matheus");
-	cat = Cat("Taki");
-	dog = Dog("Rex");
-	std::cout << std::endl;
-	std::cout << human << std::endl;
-	human.makeSound();
-	std::cout << std::endl;
-	std::cout << cat << std::endl;
-	cat.makeSound();
-	std::cout << std::endl;
-	std::cout << dog << std::endl;
-	dog.makeSound();
-	std::cout << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	std::cout << "\tMy Own Test\t" << std::endl;
+	std::cout << *meta << std::endl;
+	std::cout << *i << std::endl;
+	std::cout << *j << std::endl;
+	delete meta;
+	delete i;
+	delete j;
 	return (0);
 }
