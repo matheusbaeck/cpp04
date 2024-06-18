@@ -6,7 +6,7 @@
 #    By: math <math@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 18:22:45 by math42            #+#    #+#              #
-#    Updated: 2024/06/17 12:24:46 by math             ###   ########.fr        #
+#    Updated: 2024/06/18 12:11:49 by math             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ type		= ex
 SRCSDIR		= .
 INCLUDES	= .
 
-SRCS		= main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS		= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 # Compiler options
 CC			= clang++
