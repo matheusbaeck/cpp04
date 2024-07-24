@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:49:13 by math              #+#    #+#             */
-/*   Updated: 2024/06/17 12:41:01 by math             ###   ########.fr       */
+/*   Updated: 2024/07/23 20:58:51 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal( void ) : _type("Animal")
 {
-	std::cout << "cpy contructor Animal" << std::endl;
+	std::cout << "std contructor Animal" << std::endl;
 }
 
 Animal::Animal( std::string type) : _type(type)
@@ -22,9 +22,16 @@ Animal::Animal( std::string type) : _type(type)
 	std::cout << "constructor Animal" << std::endl;
 }
 
+Animal::Animal( Animal const &obj )
+{
+	std::cout << "cpy contructor Animal" << std::endl;
+	*this = obj;
+}
+
 Animal	&Animal::operator=( Animal const &obj )
 {
-	this->_type = obj._type;
+	if (this != &obj)
+		this->_type = obj._type;
 	return (*this);
 }
 
