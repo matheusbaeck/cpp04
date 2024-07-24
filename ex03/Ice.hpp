@@ -4,7 +4,7 @@
 # include <iostream>
 # include "AMateria.hpp"
 
-class Ice : AMateria
+class Ice : public AMateria
 {
     public:
         Ice( void );

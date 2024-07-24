@@ -4,16 +4,16 @@ AMateria::AMateria( void ) : _type("No-Type") {}
 
 AMateria::AMateria( std::string const &type ) : _type(type) {}
 
-AMateria::AMateria( AMateria const &other) { *this = other; }
+AMateria::AMateria( AMateria const &other) : _type(other._type) {}
 
 AMateria::~AMateria( void ) {}
 
 std::string const &AMateria::getType() const { return ( this->_type ); }
 
+void	AMateria::use(ICharacter& target) { (void) target; }
+
 AMateria &AMateria::operator=( AMateria const &other)
 {
-	if (this != &other) {
-		this->_type = other.getType();
-	}
+	(void) other;
 	return (*this);
 }

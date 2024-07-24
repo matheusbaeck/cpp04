@@ -1,29 +1,20 @@
-#ifndef ICHARACTER_HPP__
-# define ICHARACTER_HPP__
+#ifndef __ICHARACTER_HPP__
+# define __ICHARACTER_HPP__
 
-#include <iostream>
+#include <string>
+
 #include "AMateria.hpp"
 
 class AMateria;
 
 class ICharacter {
-	private:
-		void *_slot[4];
-    public:
-		ICharacter( void );
-		ICharacter( AMateria *[4] );
-		ICharacter( ICharacter const & );
-		virtual ~ICharacter();
 
-		AMateria *getEquiped( int ) const;
-		virtual std::string const &getName( void ) const = 0;
+	public:
+		virtual ~ICharacter() {};
+		virtual std::string const& getName() const = 0;
 		virtual void equip(AMateria *m) = 0;
 		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter &target) = 0;
-
-		ICharacter &operator=( ICharacter const & );
-
-
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
-# endif
+#endif
