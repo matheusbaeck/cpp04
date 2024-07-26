@@ -19,10 +19,10 @@ class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat( void );
-		WrongCat( std::string type );
-		WrongCat	&operator=( WrongCat const &obj );
+		WrongCat( WrongCat const & );
 		~WrongCat( void );
-		void		makeSound( void ) const;
+		WrongCat	&operator=( WrongCat const &obj );
+		virtual void		makeSound( void ) const;
 };
 
 #endif

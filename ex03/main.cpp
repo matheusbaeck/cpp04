@@ -20,7 +20,6 @@ int main()
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
-	std::cout << "hey" << std::endl;
 	me->use(1, *bob);
 	delete bob;
 	delete me;

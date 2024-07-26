@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:35:40 by math              #+#    #+#             */
-/*   Updated: 2024/06/17 12:58:39 by math             ###   ########.fr       */
+/*   Updated: 2024/07/26 20:51:55 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ class Cat : public Animal
 {
 	public:
 		Cat( void );
-		Cat( std::string type );
-		Cat	&operator=( Cat const &obj );
+		Cat	&operator=( Cat const & );
 		~Cat( void );
-		void		makeSound( void ) const;
+		virtual void		makeSound( void ) const;
 };
 
 #endif

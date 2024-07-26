@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:35:40 by math              #+#    #+#             */
-/*   Updated: 2024/06/17 12:51:03 by math             ###   ########.fr       */
+/*   Updated: 2024/07/26 20:51:42 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ class Dog : public Animal
 {
 	public:
 		Dog( void );
-		Dog( std::string type );
-		Dog	&operator=( Dog const &obj );
+		Dog	&operator=( Dog const & );
 		~Dog( void );
-		void		makeSound( void ) const;
-		/*	EXTRA	*/
-		friend std::ostream	&operator<<( std::ostream &os, Dog const &obj );
+		virtual void		makeSound( void ) const;
 };
+
+std::ostream	&operator<<( std::ostream &os, Dog const &obj );
 
 #endif

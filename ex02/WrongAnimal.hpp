@@ -22,14 +22,13 @@ class WrongAnimal
 		std::string _type;
 	public:
 		WrongAnimal( void );
-		WrongAnimal( std::string );
-		WrongAnimal	&operator=( WrongAnimal const &obj );
+		WrongAnimal( WrongAnimal const & );
+		WrongAnimal	&operator=( WrongAnimal const & );
 		virtual ~WrongAnimal( void );
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
-		/*	EXTRA	*/
-		friend std::ostream	&operator<<( std::ostream &os, WrongAnimal const &obj );
-
 };
+
+std::ostream	&operator<<( std::ostream &os, WrongAnimal const &obj );
 
 #endif

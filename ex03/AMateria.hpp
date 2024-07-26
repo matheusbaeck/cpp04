@@ -24,4 +24,6 @@ class AMateria
 		AMateria &operator=( AMateria const & );
 };
 
+std::ostream &operator<<( std::ostream &, AMateria const & );
+
 # endif

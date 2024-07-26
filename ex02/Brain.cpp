@@ -14,12 +14,18 @@
 
 Brain::Brain( void )
 {
-	std::cout << "cpy contructor Brain" << std::endl;
+	std::cout << "std contructor Brain" << std::endl;
 }
 
 Brain::Brain( std::string type)
 {
 	std::cout << "constructor Brain "<< type << std::endl;
+}
+
+Brain::Brain( Brain const &other )
+{
+	std::cout << "cpy contructor Brain" << std::endl;
+	*this = other;
 }
 
 Brain	&Brain::operator=( Brain const &obj )

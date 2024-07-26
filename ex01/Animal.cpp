@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Animal copy.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:49:13 by math              #+#    #+#             */
-/*   Updated: 2024/06/18 18:51:54 by math             ###   ########.fr       */
+/*   Updated: 2024/07/26 21:01:42 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 Animal::Animal( void ) : _type("Animal")
 {
-	std::cout << "cpy contructor Animal" << std::endl;
-	this->_brain = NULL;
+	std::cout << "std contructor Animal" << std::endl;
 }
 
-Animal::Animal( std::string type) : _type(type)
+Animal::Animal( Animal const &obj )
 {
-	std::cout << "constructor Animal" << std::endl;
-	this->_brain = NULL;
+	std::cout << "cpy contructor Animal" << std::endl;
+	*this = obj;
 }
 
 Animal	&Animal::operator=( Animal const &obj )
 {
-	this->_type = obj._type;
-	this->_brain = obj._brain;
+	if (this != &obj)
+		this->_type = obj._type;
 	return (*this);
 }
 
@@ -58,6 +57,7 @@ void	Animal::newBrain( void )
 	this->deleteBrain();
 	this->_brain = new Brain();
 }
+
 void	Animal::deleteBrain( void )
 {
 	if (this->_brain)
@@ -65,4 +65,3 @@ void	Animal::deleteBrain( void )
 		delete this->_brain;
 	}
 }
-

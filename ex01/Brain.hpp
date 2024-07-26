@@ -23,8 +23,9 @@ class Brain
 	public:
 		Brain( void );
 		Brain( std::string type );
-		Brain	&operator=( Brain const &obj );
+		Brain( Brain const &obj );
 		~Brain( void );
+		Brain	&operator=( Brain const &obj );
 };
 
 #endif

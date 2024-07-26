@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Animal copy.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:35:40 by math              #+#    #+#             */
-/*   Updated: 2024/06/18 18:50:33 by math             ###   ########.fr       */
+/*   Updated: 2024/07/26 20:59:45 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ class Animal
 		std::string _type;
 	public:
 		Animal( void );
-		Animal( std::string );
-		Animal	&operator=( Animal const &obj );
+		Animal( Animal const &);
+		Animal	&operator=( Animal const & );
 		virtual ~Animal( void );
+
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
-		/*	EXTRA	*/
-		friend std::ostream	&operator<<( std::ostream &os, Animal const &obj );
-
 };
+
+std::ostream	&operator<<( std::ostream &os, Animal const &obj );
 
 #endif

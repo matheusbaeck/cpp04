@@ -14,23 +14,25 @@
 
 WrongAnimal::WrongAnimal( void ) : _type("WrongAnimal")
 {
+	std::cout << "std contructor WrongAnimal" << std::endl;
+}
+
+WrongAnimal::WrongAnimal( WrongAnimal const &other )
+{
 	std::cout << "cpy contructor WrongAnimal" << std::endl;
-}
-
-WrongAnimal::WrongAnimal( std::string type) : _type(type)
-{
-	std::cout << "constructor WrongAnimal" << std::endl;
-}
-
-WrongAnimal	&WrongAnimal::operator=( WrongAnimal const &obj )
-{
-	this->_type = obj._type;
-	return (*this);
+	*this = other;
 }
 
 WrongAnimal::~WrongAnimal( void )
 {
 	std::cout << "destructor WrongAnimal" << std:: endl;
+}
+
+WrongAnimal	&WrongAnimal::operator=( WrongAnimal const &obj )
+{
+	if (this != &obj)
+		this->_type = obj._type;
+	return (*this);
 }
 
 std::string	WrongAnimal::getType( void ) const

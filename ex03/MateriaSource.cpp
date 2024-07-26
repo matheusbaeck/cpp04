@@ -29,15 +29,15 @@ MateriaSource::~MateriaSource( void )
 void		MateriaSource::learnMateria( AMateria *m )
 {
 	this->_src[this->_idx] = m;
-	this->_idx = ++this->_idx % 4;
+	this->_idx = (this->_idx + 1) % 4;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type)
 {
 	try {
 		for (size_t i = 0; i < 4; i++) {
-			if (this->_src[this->_idx] && this->_src[this->_idx]->getType() == type)
-				return (this->_src[this->_idx]->clone());
+			if (this->_src[i] && this->_src[i]->getType() == type)
+				return (this->_src[i]->clone());
 		}
 		throw std::logic_error("you don't know this materia: " + type);
 	} catch(const std::exception& e) {

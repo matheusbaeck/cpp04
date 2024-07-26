@@ -17,3 +17,9 @@ AMateria &AMateria::operator=( AMateria const &other)
 	(void) other;
 	return (*this);
 }
+
+std::ostream &operator<<( std::ostream &os , AMateria const &obj )
+{
+	os << obj.getType();
+	return (os);
+}
