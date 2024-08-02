@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:49:13 by math              #+#    #+#             */
-/*   Updated: 2024/07/26 20:36:21 by math             ###   ########.fr       */
+/*   Updated: 2024/08/02 10:49:26 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ Animal::Animal( Animal const &obj )
 	*this = obj;
 }
 
-Animal	&Animal::operator=( Animal const &obj )
-{
-	if (this != &obj)
-		this->_type = obj._type;
-	return (*this);
-}
-
 Animal::~Animal( void )
 {
 	std::cout << "destructor Animal" << std:: endl;
+}
+
+Animal	&Animal::operator=( Animal const &other )
+{
+	if (this != &other)
+		this->_type = other._type;
+	return (*this);
 }
 
 std::string	Animal::getType( void ) const

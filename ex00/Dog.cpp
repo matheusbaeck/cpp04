@@ -6,7 +6,7 @@
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:30:43 by math              #+#    #+#             */
-/*   Updated: 2024/07/26 20:36:35 by math             ###   ########.fr       */
+/*   Updated: 2024/08/02 10:52:10 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,26 @@
 Dog::Dog( void )
 {
 	this->_type = "Dog";
-	std::cout << "cpy contructor Dog" << std::endl;
+	std::cout << "std contructor Dog" << std::endl;
 }
 
-Dog	&Dog::operator=( Dog const &obj )
+Dog::Dog( Dog const &other) : Animal()
 {
-	this->_type = obj._type;
-	return (*this);
+	*this = other;
+	std::cout << "cpy contructor Dog" << std::endl;
+
 }
 
 Dog::~Dog( void )
 {
 	std::cout << "destructor Dog" << std:: endl;
+}
+
+Dog	&Dog::operator=( Dog const &other )
+{
+	if (this != &other)
+		this->_type = other._type;
+	return (*this);
 }
 
 void	Dog::makeSound( void ) const

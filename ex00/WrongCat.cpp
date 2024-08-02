@@ -14,14 +14,14 @@
 
 WrongCat::WrongCat( void )
 {
-	std::cout << "std contructor WrongCat" << std::endl;
 	this->_type = "WrongCat";
+	std::cout << "std contructor WrongCat" << std::endl;
 }
 
 WrongCat::WrongCat( WrongCat const &other ) : WrongAnimal()
 {
-	std::cout << "cpy contructor WrongCat" << std::endl;
 	*this = other;
+	std::cout << "cpy contructor WrongCat" << std::endl;
 }
 
 WrongCat::~WrongCat( void )

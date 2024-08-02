@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H__
-# define WRONGANIMAL_H__
+#ifndef WRONGANIMAL_HPP__
+# define WRONGANIMAL_HPP__
 
 # include <iostream>
 # include <iomanip>
@@ -23,8 +23,10 @@ class WrongAnimal
 	public:
 		WrongAnimal( void );
 		WrongAnimal( WrongAnimal const & );
-		WrongAnimal	&operator=( WrongAnimal const & );
 		virtual ~WrongAnimal( void );
+
+		WrongAnimal	&operator=( WrongAnimal const & );
+
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
 };

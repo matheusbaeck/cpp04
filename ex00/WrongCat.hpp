@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCat_H__
-# define WRONGCat_H__
+#ifndef WRONGCat_HPP__
+# define WRONGCat_HPP__
 
 # include "WrongAnimal.hpp"
 
@@ -21,7 +21,9 @@ class WrongCat : public WrongAnimal
 		WrongCat( void );
 		WrongCat( WrongCat const & );
 		~WrongCat( void );
+
 		WrongCat	&operator=( WrongCat const &obj );
+
 		virtual void		makeSound( void ) const;
 };
 
