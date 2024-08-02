@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H__
-# define BRAIN_H__
+#ifndef BRAIN_HPP__
+# define BRAIN_HPP__
 
 # include <iostream>
 # include <iomanip>
@@ -19,13 +19,17 @@
 class Brain
 {
 	private:
-		std::string	_ideas[100];
+		std::string	*_ideas;
+
 	public:
 		Brain( void );
-		Brain( std::string type );
 		Brain( Brain const &obj );
 		~Brain( void );
+
 		Brain	&operator=( Brain const &obj );
+
+		const std::string	&getIdea( int ) const;
+		void				setIdea( std::string );
 };
 
 #endif

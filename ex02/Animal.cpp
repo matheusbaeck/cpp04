@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal copy.cpp                                    :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: math <math@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:49:13 by math              #+#    #+#             */
-/*   Updated: 2024/07/26 21:01:42 by math             ###   ########.fr       */
+/*   Updated: 2024/08/02 11:11:24 by math             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,4 @@ std::ostream	&operator<<(std::ostream &os, Animal const &obj )
 	os << obj.getType() + ":";
 	obj.makeSound();
 	return (os);
-}
-
-void	Animal::newBrain( void )
-{
-	this->deleteBrain();
-	this->_brain = new Brain();
-}
-
-void	Animal::deleteBrain( void )
-{
-	if (this->_brain)
-	{
-		delete this->_brain;
-	}
 }
