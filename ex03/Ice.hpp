@@ -2,6 +2,7 @@
 # define ICE_HPP__
 
 # include <iostream>
+# include <stdexcept>
 # include "AMateria.hpp"
 
 class Ice : public AMateria

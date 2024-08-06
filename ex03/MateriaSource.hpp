@@ -8,32 +8,24 @@
 
 class MateriaSource;
 
-class MateriaSource : public IMateriaSource {
-    private:
-        AMateria **_src;
-        int      _idx;
-    public:
+class MateriaSource : public IMateriaSource
+{
+	private:
+		AMateria **_src;
+		int      _idx;
+	public:
 		MateriaSource( void );
 		MateriaSource( MateriaSource const & );
 		virtual ~MateriaSource();
 
-        virtual void learnMateria(AMateria*);
-        virtual AMateria* createMateria(std::string const & type);
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 
-        virtual void list( void )
-        {
-            std::cout << "Learned Materias:" << std::endl;
-            for (int i = 0; i < 4; i++)
-            {
-                if (_src[i])
-                    std::cout << "\t" << _src[i]->getType() << std::endl;
-                else
-                    std::cout << "\t" << "NULL" << std::endl;
-
-            }
-        }
+		const AMateria &getAMateria( int ) const;
 
 		MateriaSource &operator=( MateriaSource const & );
 };
+
+std::ostream &operator<<( std::ostream &os, MateriaSource const & );
 
 # endif

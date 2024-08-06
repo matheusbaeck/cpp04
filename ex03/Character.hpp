@@ -12,6 +12,7 @@ class Character : public ICharacter
 	private:
 		std::string _name;
 		AMateria    **_slot;
+
 		int getIndex( void )
 		{
 			for (int i = 0; i < 4; i++) {
@@ -20,7 +21,7 @@ class Character : public ICharacter
 			}
 			throw std::logic_error("slots are full");
 		}
-    public:
+	public:
 		Character( void );
 		Character( std::string name );
 		Character( Character const & );
@@ -31,9 +32,11 @@ class Character : public ICharacter
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter &target);
 
+		const AMateria &getAMateria( int ) const;
+
 		Character &operator=( Character const & );
-
-
 };
+
+std::ostream &operator<<( std::ostream &os, Character &c);
 
 # endif

@@ -49,7 +49,7 @@ const std::string	&Brain::getIdea( int index ) const
 {
 	if (index < 0 || index >= 100)
 		throw std::out_of_range("Index out of range");
-	return this->_ideas[index];
+	return (this->_ideas[index]);
 }
 
 void Brain::setIdea( std::string newIdea )

@@ -2,14 +2,16 @@
 
 Ice::Ice( void ) : AMateria("ice") {}
 
-Ice::Ice( Ice const &other ) : AMateria() { *this = other; }
+Ice::Ice( Ice const &other ) : AMateria(other.getType()) {}
 
 Ice::~Ice( void ) {}
 
 Ice *Ice::clone( void ) const
 {
-	Ice *allocedIce = new Ice(*this);
-	return (allocedIce);
+	Ice *ice = new Ice(*this);
+	if (!ice)
+		throw std::bad_alloc();
+	return (ice);
 }
 
 void Ice::use( ICharacter &creature )

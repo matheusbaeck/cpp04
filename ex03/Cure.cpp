@@ -2,14 +2,16 @@
 
 Cure::Cure( void ) : AMateria("cure") {}
 
-Cure::Cure( Cure const &other ) : AMateria() { *this = other; }
+Cure::Cure( Cure const &other ) : AMateria(other.getType()) {}
 
 Cure::~Cure( void ) {}
 
 Cure *Cure::clone( void ) const
 {
-	Cure *allocedCure = new Cure(*this);
-	return (allocedCure);
+	Cure *cure = new Cure(*this);
+	if (!cure)
+		throw std::bad_alloc();
+	return (cure);
 }
 
 void Cure::use( ICharacter &creature )

@@ -2,6 +2,7 @@
 # define CURE_HPP__
 
 # include <iostream>
+# include <stdexcept>
 # include "AMateria.hpp"
 
 class Cure : public AMateria
